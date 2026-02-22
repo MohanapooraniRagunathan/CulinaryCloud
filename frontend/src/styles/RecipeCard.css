@@ -1,0 +1,142 @@
+/* ================= RECIPE CARD ================= */
+.recipe-card {
+  background: #1c1c1c;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+  height: 100%; /* ensures equal height in grid */
+}
+
+body.light .recipe-card {
+  background: #fff;
+  color: #121212;
+}
+
+.recipe-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(244, 180, 0.25);
+}
+
+/* ================= IMAGE ================= */
+.recipe-image {
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+.recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+  transition: 0.3s;
+}
+.recipe-image img:hover {
+  filter: brightness(1);
+}
+
+/* ================= FAVORITE ICON ================= */
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= CONTENT ================= */
+.recipe-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* makes all cards same height */
+  justify-content: space-between; /* button sticks to bottom */
+  padding: 14px 16px 18px;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Title */
+.recipe-main-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  word-wrap: break-word; /* prevents overflow on long titles */
+}
+
+/* Tags */
+.recipe-tags {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.tag {
+  background: #ff9800;
+  color: #121212;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* Meta info */
+.recipe-meta {
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Button */
+.recipe-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f4b400, #ff9800);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: auto; /* ensures button sticks at bottom */
+}
+.recipe-btn:hover {
+  opacity: 0.85;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  align-items: stretch; /* makes all cards in a row equal height */
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.95); }
+}

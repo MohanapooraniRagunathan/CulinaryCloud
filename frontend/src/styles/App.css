@@ -1,0 +1,25 @@
+/* ================= APP LAYOUT ================= */
+.app { padding: 40px 60px; text-align: center; }
+.main-title { margin-bottom: 40px; font-size: 32px; font-weight: 700; }
+
+/* ================= HEADER ================= */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: linear-gradient(90deg, #ff9800, #f4b400);
+  color: #121212;
+  font-weight: 700;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+.mode-toggle-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mode-toggle-btn:hover { opacity: 0.85; }
